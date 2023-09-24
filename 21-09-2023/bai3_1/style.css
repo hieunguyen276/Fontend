@@ -1,0 +1,97 @@
+.content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap
+}
+
+.item {
+    width: max-content;
+    height:max-content;
+    margin: 10px;
+    border: 1px solid #c2c2c2;
+}
+
+.item:hover {
+    border: 1px solid #d56108;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.item > img {
+    width: 180px;
+    height: 200px;
+    margin: 10px;
+}
+
+.name-item {
+    display: block;
+    text-align: center;
+    color: #d56108;
+    font-weight: 900;
+    margin-top: 18px;
+    font-size: 16px;
+}
+
+.name-item:hover {
+    color: rgb(245, 237, 4);
+}
+
+.price-item {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 20px;
+    color: red;
+    font-weight: 900;
+}
+
+.price-item:hover {
+    color: rgb(0, 196, 0);
+}
+
+
+/* Bài 2 */
+
+.category {
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon-check {
+    font-size: 16px;
+    color: #2B4274;
+    margin-right: 10px;
+}
+
+.icon-mobile {
+    font-size: 30px;
+    margin-right: 16px;
+    margin-left: -10px;
+}
+
+.sale {
+    margin-top: 16px;
+}
+
+.sale img {
+    width: 90px;
+    height: 24px;
+    display: block;
+}
+
+.item-icon {
+    position: relative;
+}
+
+.item-icon b {
+    width: max-content;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.item-icon b:hover {
+    color: #3FBCE5;
+    text-decoration: underline;
+}
