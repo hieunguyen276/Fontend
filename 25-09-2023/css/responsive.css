@@ -258,4 +258,8 @@
     .tablet-menu-btn {
         display: none;
     }
+
+    .select-item {
+        display: flex;
+    }
 }
