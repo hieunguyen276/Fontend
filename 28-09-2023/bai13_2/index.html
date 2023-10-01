@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 13.2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="id">
+        <div class="main">
+            <div class="box">
+                <div class="item__name">
+                    <span>Họ và tên</span>
+                    <span>Giới tính</span>
+                    <span>Email</span>
+                    <span>Số điện thoại</span>
+                    <span>Mật khẩu</span>
+                    <span>Xác nhận mật khẩu</span>
+                </div>
+
+
+                <form action="" method="POST" class="form" id="form-1">
+                    <div class="item__box">
+                        <div class="form-group">
+                            <input id="fullname" name="fullname" type="text" placeholder="Nhập họ tên...">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="box-gender">
+                                <input id="male" name="gender" type="radio" value="male" class="male"><span>Nam</span>
+                                <input id="female" name="gender" type="radio" value="female" class="female"><span>Nữ</span>
+                            </div>
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="email" name="email" type="email" placeholder="Nhập email..."> 
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="number" name="number" type="text" placeholder="Nhập số điện thoại...">
+                            <span class="form-message"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input id="password" name="password" type="password">
+                            <span class="form-message"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input id="password_confirmation" name="password_confirmation" type="password">
+                            <span class="form-message"></span>
+                        </div>
+                    
+                    </div>
+                    <div class="send">
+                        <button class="form-submit">Đăng ký</button>
+                        <button class="clear" onclick="check();">Xóa trắng</button>
+                    </div>
+                </form>
+
+                
+            </div>
+
+            
+        </div>
+        </div>
+        <script src="./main.js"></script>
+        <script>
+            
+            function check() {
+                var fullname = document.getElementById('fullname').value = "";
+                var email = document.getElementById('email').value = "";
+                var number = document.getElementById('number').value = "";
+                var male = document.getElementById('male').checked = false;
+                var female = document.getElementById('female').checked = false;
+                var password = document.getElementById('password').value = "";
+                var password_confirmation = document.getElementById('password_confirmation').value = "";
+
+
+            }
+
+            // Mong muốn của chúng ta
+            Validator({
+                form: '#form-1',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                    Validator.isRequired('#fullname', 'Yêu cầu nhập đầy đủ họ tên'),
+                    Validator.minLength('#fullname', 8),
+                    Validator.isRequired('#email', 'Yêu cầu nhập email'),
+                    Validator.isEmail('#email'),
+                    Validator.isRequired('#number', 'Yêu cầu nhập số điện thoại'),
+                    Validator.isVietnamesePhoneNumber('#number'),
+                    Validator.isRequired('#password', 'Yêu cầu nhập mật khẩu'),
+                    Validator.minLength('#password', 8),
+                    Validator.isRequired('#password_confirmation', 'Yêu cầu nhập lại mật khẩu'),
+                    Validator.isRequired('input[name="gender"]', 'Yêu cầu chọn giới tính'),
+                    Validator.isConfirmed('#password_confirmation', function () {
+                        return document.querySelector('#form-1 #password').value;
+                    }, 'Mật khẩu nhập lại không chính xác'),
+                ],
+                onSubmit: function (data) {
+                    // Call API 
+                
+                    alert(`Bạn đã đăng ký thành công tài khoản với email ${data.email}`);
+                }
+            })
+        </script>
+</body>
+</html>

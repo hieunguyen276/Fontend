@@ -1,0 +1,65 @@
+#main {
+    width: 100%;
+    height: max-content;
+}
+
+.list_item{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item {
+    width: 600px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 8px #888888;
+    margin-bottom: 30px;
+}
+
+.item:hover {
+    background-color: #51C4FF;
+}
+
+.item input {
+    width: 20px;
+    height: 20px;
+}
+
+.item p {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check button {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    margin: 0 10px;
+    background-color: #FF9B00;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    border-right: 3px solid #888888;
+    border-bottom: 3px solid #888888;
+    border-top: 0px solid #888888;
+    border-left: 0px solid #888888;
+}
+
+.check button:hover {
+    background-color: greenyellow;
+}

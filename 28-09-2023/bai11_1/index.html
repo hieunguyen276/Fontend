@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 11.1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./main.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div class="list_item">
+            <h1>Học lập trình tại Zent Coding School</h1>
+            <div class="item">
+                <input id="myCheck1" type="checkbox" name="" id="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <input id="myCheck2" type="checkbox" name="" id="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <input id="myCheck3" type="checkbox" name="" >
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <input id="myCheck4" type="checkbox" name="" >
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <input id="myCheck5" type="checkbox" name="" >
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <input id="myCheck6" type="checkbox" name="" >
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="item">
+                <input id="myCheck7" type="checkbox" name="" >
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+
+            <div class="check">
+                <button class="check" onclick="checked()">Check ALL</button>
+                <button class="uncheck" onclick="Unchecked()">UnCheck ALL</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checked() {
+            document.getElementById("myCheck1").checked = true;
+            document.getElementById("myCheck2").checked = true;
+            document.getElementById("myCheck3").checked = true;
+            document.getElementById("myCheck4").checked = true;
+            document.getElementById("myCheck5").checked = true;
+            document.getElementById("myCheck6").checked = true;
+            document.getElementById("myCheck7").checked = true;
+        }
+        
+        function Unchecked() {
+            document.getElementById("myCheck1").checked = false;
+            document.getElementById("myCheck2").checked = false;
+            document.getElementById("myCheck3").checked = false;
+            document.getElementById("myCheck4").checked = false;
+            document.getElementById("myCheck5").checked = false;
+            document.getElementById("myCheck6").checked = false;
+            document.getElementById("myCheck7").checked = false;
+        }
+    </script>
+</body>
+</html>

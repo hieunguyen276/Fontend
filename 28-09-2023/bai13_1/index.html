@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 13.1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+        <div class="main">
+            <div class="slide">
+                <div class="list__img fade">
+                    <img src="./img/anh1.png" alt="">
+                </div>
+                <div class="list__img fade">
+                    <img src="./img/anh2.png" alt="">
+                </div>
+                <div class="list__img fade">
+                    <img src="./img/anh3.png" alt="">
+                </div>
+                <div class="list__img fade">
+                    <img src="./img/anh4.png" alt="">
+                </div>
+                <div class="list__img fade">
+                    <img src="./img/anh5.png" alt="">
+                </div>
+                <div class="list__img fade">
+                    <img src="./img/anh6.png" alt="">
+                </div>
+                <div class="list__img fade">
+                    <img src="./img/anh7.png" alt="">
+                </div>
+                <div class="list__img fade">
+                    <img src="./img/anh8.png" alt="">
+                </div>
+                <div class="node">
+                    <div class="item">
+                        <div class="item-check" onclick="currentSlide(1)">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-check" onclick="currentSlide(2)">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-check" onclick="currentSlide(3)">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-check" onclick="currentSlide(4)">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-check" onclick="currentSlide(5)">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-check" onclick="currentSlide(6)">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-check" onclick="currentSlide(7)">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-check" onclick="currentSlide(8)">
+
+                        </div>
+                    </div>
+                </div>
+
+                <button class="control-prev" onclick="plusSlides(-1)";>
+                    <i class="icon-check fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="control-next" onclick="plusSlides(1)">
+                    <i class="icon-check fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <script>
+            window.onload = function() {
+                setInterval(function() {
+                    plusSlides(1);
+                }, 5000)
+            }
+            
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("list__img");
+              let dots = document.getElementsByClassName("item-check");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
+</body>
+</html>

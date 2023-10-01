@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <div class="main">
+        <div id="id">Cỡ chữ</div>
+        <div class="item">
+            <button onclick="Normal();" >Mặc định</button>
+        </div>
+        <div class="item">
+            <button onclick="Bigger();">Chữ lớn</button>
+        </div>
+        <div class="item">
+            <button onclick="Smaller();">Chữ nhỏ</button>
+        </div>
+
+        <script>
+            var id = document.getElementById("id");
+            var defaultFontSize = parseFloat(getComputedStyle(id).fontSize);
+           
+            function Normal() {
+                var idDefaultFontSize = defaultFontSize + "px";
+                id.style.fontSize = idDefaultFontSize;
+            }
+
+            function Bigger(){
+                var defaul = parseFloat(getComputedStyle(id).fontSize);
+                var bigger =  defaul * 1.4;
+                id.style.fontSize = bigger + "px";
+            }
+
+            function Smaller() {
+                var defaul = parseFloat(getComputedStyle(id).fontSize);
+                var smaller = defaul * 0.6;
+                id.style.fontSize = smaller + "px";
+            }
+ 
+        </script>
+
+    </div>
+</body>
+</html>
