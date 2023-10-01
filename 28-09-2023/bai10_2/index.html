@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./main.js"></script>
 </head>
 <body>
-    
+    <script>
+        var tong = 0;
+        var i = 1;
+
+        var n = parseInt(prompt("Mời bạn nhập n", n));
+
+        do {
+            tong +=i;
+            i++;
+        } while (i <= n);
+
+        console.log(tong);
+    </script>
 </body>
 </html>
