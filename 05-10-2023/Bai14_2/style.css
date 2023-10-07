@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    width: 900px;
+    height: max-content;
+    background-color: #2d2d2d;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-title {
+    width: 500px;
+    height:max-content;
+    margin: 30px 0px;
+}
+
+.title-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-style: italic;
+
+}
+
+.title-head h2 {
+    font-size: 70px;
+    color: #fff;
+}
+
+.title-head span {
+    font-size: 30px;
+    color: #C4EB5A;
+}
+
+.title-content {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.title-content i {
+    width: 30px;
+    color: #C4EB5A;
+}
+
+.title-content span {
+    color: #fff;
+    font-style: italic;
+}
+
+/* box-content */
+
+.box-content__list {
+
+    flex-direction: column;
+    width: 80%;
+    border: 1px solid #000;
+    border-radius: 6px;
+    background-color: #505050;
+}
+
+.box-content {
+    border: 1px solid #000;
+
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.content-header {
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+.content-header::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #2f2f2f;
+    width: 100%;
+    bottom: 0;
+}
+
+.box-show {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #C4EB5A;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+}
+
+.box-show:hover {
+    cursor: pointer;
+}
+
+
+.header-title {
+    position: absolute;
+    margin-left: 60px;
+    color: #C4EB5A;
+    font-size: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.box-show__icon {
+    font-size: 30px;
+    color: #587604;
+    font-weight: bold;
+}
+
+.content-para {
+    color: #fff;
+    margin: 20px 40px;
+}
+
+.box-show__icon.checked::before {
+    content: "-";
+}
+
+.box-show__icon.unchecked::before {
+    content: "+";
+}
+
+.hidden {
+    display: none;
+}
+
