@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Bài 16.1</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div id="main">
+        <div class="content">
+            <div class="title">
+                <span>Album ảnh</span>
+            </div>
+            <div class="box-item">
+                <img src="./img/anh2.png" alt="Tokio Ghoul">
+                <img src="./img/anh4.png" alt="Ảnh đẹp hoàng hôn">
+                <img src="./img/anh5.png" alt="Sword Art Online">
+                <img src="./img/anh6.png" alt="Ảnh đẹp anime">
+                <img src="./img/anh8.png" alt="Fairy Tail">
+            </div>
+        </div>
+
+        <div class="overlay">
+            <div class="modal">
+              <img src="" alt="Zoomed Image">
+              <div class="description"></div>
+              <div class="close-btn">&times;</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.box-item img').click(function() {
+              var imgSrc = $(this).attr('src');
+              var altText = $(this).attr('alt');
+              $('.modal img').attr('src', imgSrc).css({
+                'width': '60px',
+                'height': '50px',
+                'opacity': 0
+              }).animate({
+                'width': '600px',
+                'height': '500px',
+                'opacity': 1
+              }, 1000);;
+              $('.description').text(altText);
+              $('.overlay').fadeIn();
+              $('.modal').css('opacity', '1');
+            });
+          
+            $('.close-btn').click(function() {
+              $('.overlay').fadeOut();
+              $('.modal').css('opacity', '0');
+            });
+          });
+    </script>
+</body>
+</html>
+

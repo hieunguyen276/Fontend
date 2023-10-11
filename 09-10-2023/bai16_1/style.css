@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    font-size: 24px;
+    color: rgb(0, 34, 255);
+    font-weight: 500;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.box-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-item img {
+    width: 200px;
+    height: 160px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.box-item img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.modal img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 500px;
+}
+
+.description {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    padding: 10px 20px;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+.close-btn:hover {
+    background-color: #ccc;
+}

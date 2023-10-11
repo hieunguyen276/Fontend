@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bài 16.2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-icon">
+          <i class="icon-open fa fa-bars"></i>
+          <i class="icon-close fa-solid fa-xmark"></i>
+        </div>
+
+        <ul class="menu">
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Giới thiệu</a></li>
+          <li class="submenu">
+            <a href="#">Dịch vụ</a>
+            <ul class="sub-menu">
+              <li><a href="#">Dịch vụ 1</a></li>
+              <li><a href="#">Dịch vụ 2</a></li>
+              <li><a href="#">Dịch vụ 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </nav>
+    
+    <script>
+        $(document).ready(function() {
+            $('.icon-open').click(function() {
+                $('.menu').addClass('active');
+                $('.icon-open').css('display', 'none');
+                $('.icon-close').css('display', 'block');
+                $('.navbar').css({
+                    transform: 'translateX(calc(100%+32px))',
+
+                }).animate({
+                    transform: 'translateX(0)',
+
+                }, 2000);
+            });
+
+            $('.icon-close').click(function() {
+                $('.menu').removeClass('active');
+                $('.icon-open').css('display', 'block');
+                $('.icon-close').css('display', 'none');
+            });
+            
+            $('.submenu > a').click(function(e) {
+                e.preventDefault();
+                $(this).siblings('.sub-menu').slideToggle();
+            });
+            });
+    </script>
+</body>
+</html>
